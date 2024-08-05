@@ -1,0 +1,66 @@
+CREATE TABLE funcionarios (
+id integer PRIMARY KEY, 
+
+
+
+nome text not NULL,
+idade integer,             
+salario real,
+data_nascimento date,
+horario_chegada time,
+taxas_atraso numeric
+
+SELECT * FROM funcionarios;
+
+INSERT INTO funcionarios(id, nome, idade, salario, data_nascimento, horario_chegada, taxas_atraso) VALUES
+(1, 'Marcelo', '18', '8000.00', '17/07/2006', '14:00', '10.50'),
+(2, 'Carlos', 	NULL, '10000.00', '12/04/1999', '14:00', '10.50'),
+(3, 'Aldemir', '65', '15000.00',  '03/12/1959', '14:00', '10.50'),
+(4, 'Ricardo', '45', '9000.00',  '07/01/1979', '14:00', '10.50'),
+(5, 'Eduardo', '32', '7000.00', '07/05/1992', '14:00', '10.50'),
+(6, 'Raphael', '41', '6500.00', '17/09/1983', '13:00', NULL),
+(7, 'Victorya', '34', '38000.00', '18/06/1988', '14:00', '10.50'),
+(8, 'Joao', '28', '5000.00', '11/12/1996', '13:00', NULL),
+(9, 'Rosineide', '50', '9000.00', '20/02/1974', '14:00', '10.50'),
+(10, 'Eraldo', '56', '10000.00', '11/06/1968', '13:00', NULL);
+
+SELECT * FROM funcionarios;
+ 
+SELECT * FROM funcionarios
+WHERE idade = 45;
+
+SELECT COUNT(nome) AS Contagem_Nomes
+FROM funcionarios;
+
+SELECT AVG(salario) AS Media_Salarial
+FROM funcionarios;
+
+SELECT * FROM funcionarios
+WHERE salario > 9000
+
+UPDATE funcionarios
+set nome = 18 
+where nome = 'Marcelo';
+
+UPDATE funcionarios
+set idade = 25
+where nome = 'Carlos';
+
+UPDATE funcionarios
+set salario = 9000.00 
+where nome = 'Marcelo';
+
+UPDATE funcionarios
+set data_nascimento = 18 
+where nome = 'Marcelo';
+
+UPDATE funcionarios
+set horario_chegada = '13:00'
+where nome = 'Marcelo';
+
+UPDATE funcionarios
+set taxas_atraso = NULL
+where nome = 'Marcelo';
+
+SELECT * FROM funcionarios;
+
